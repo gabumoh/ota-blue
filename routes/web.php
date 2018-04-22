@@ -14,3 +14,6 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+//Github webhook
+$router->post('deploy', 'DeployController@deploy');
