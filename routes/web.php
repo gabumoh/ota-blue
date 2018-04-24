@@ -14,3 +14,28 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('/key', function() {
+    return str_random(32);
+});
+
+$router->group(['prefix'=>'ota-blue-api'], function () use ($router){
+    $router->get('reservations',
+        'ReservationController@showAllReservations'
+    );
+
+    $router->get('reservations/{id}', 
+        'ReservationController@showOneReservation'
+    );
+
+    $router->post('reservations', 
+        'ReservationController@create'
+    );
+
+    $router->put('reservation', 
+        'ReservationController@update'
+    );
+
+    $router->delete('reservations/{id}', 
+        'ReservationController@delete'
+    );
+});
