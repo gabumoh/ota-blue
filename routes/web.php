@@ -31,7 +31,7 @@ $router->group(['prefix'=>'ota-blue-api'], function () use ($router){
         'ReservationController@create'
     );
 
-    $router->put('reservation', 
+    $router->put('reservation/{id}', 
         'ReservationController@update'
     );
 
