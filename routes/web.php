@@ -38,6 +38,28 @@ $router->group(['prefix'=>'ota-blue-api'], function () use ($router){
     $router->delete('reservations/{id}', 
         'ReservationController@delete'
     );
+
+    //===================Invoices=======================//
+
+    $router->get('invoices',
+        'InvoiceController@showAllInvoices'
+    );
+
+    $router->get('invoices/{id}', 
+        'InvoiceController@showOneInvoice'
+    );
+
+    $router->post('invoices', 
+        'InvoiceController@create'
+    );
+
+    $router->put('invoices/{id}', 
+        'InvoiceController@update'
+    );
+
+    $router->delete('invoices/{id}', 
+        'InvoiceController@delete'
+    );
 });
 
 //Github webhook1
