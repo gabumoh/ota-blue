@@ -12,16 +12,20 @@ class CreateReservationsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {       
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('property_id');
-            $table->unsignedInteger('room_id');
-            $table->unsignedInteger('payment_id');
+            $table->unsignedInteger('room_category_id');
+            $table->unsignedInteger('ota_id');
+            $table->unsignedInteger('guest_id');
+            $table->unsignedInteger('stay_id');
+            $table->unsignedInteger('number_of_rooms');
+            $table->unsignedInteger('number_of_guests');                      
             $table->dateTime('check_in')->useCurrent();
             $table->dateTime('check_out')->nullable();
-            $table->boolean('is_paid')->default(0);
-            $table->string('status')->default('Not paid');
+            $table->string('paid_status')->default('Not Paid');
+            $table->string('booking_status')->default('Pending');
             $table->string('made_by');
             $table->text('comments');
             $table->timestamps();
