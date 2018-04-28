@@ -17,7 +17,8 @@ class CreateReservationsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('property_id');
             $table->unsignedInteger('room_category_id');
-            $table->unsignedInteger('ota_id');
+            $table->unsignedInteger('channel_id');
+            $table->unsignedInteger('reservation_payment_id');
             $table->unsignedInteger('guest_id');
             $table->unsignedInteger('stay_id');
             $table->unsignedInteger('number_of_rooms');
