@@ -55,7 +55,7 @@ return [
 });
 
 $factory->define(App\Invoice::class, function (Faker\Generator $faker) {
-    $rand_str = ['Not paid', 'Piad'];
+    $rand_str = ['Not paid', 'Paid'];
     $index = rand(0,1);
     $rand_int = [0,1];
 
