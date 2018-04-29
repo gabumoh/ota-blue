@@ -22,6 +22,10 @@ $router->group(['prefix'=>'ota-blue-api'], function () use ($router){
     $router->get('reservations',
         'ReservationController@showAllReservations'
     );
+  
+    $router->get('new_reservations',
+        'ReservationController@showNewReservations'
+    );
 
     $router->get('reservations/{id}', 
         'ReservationController@showOneReservation'

@@ -12,7 +12,7 @@ class Reservation extends Model
      *
      * @var array
      */
-    protected $guard = [];
+    protected $guarded = [];
 
     /**
      * The attributes excluded from the model's JSON form.

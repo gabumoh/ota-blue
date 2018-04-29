@@ -27,6 +27,7 @@ class CreateReservationsTable extends Migration
             $table->dateTime('check_out')->nullable();
             $table->string('paid_status')->default('Not Paid');
             $table->string('booking_status')->default('Pending');
+            $table->boolean('retrieved')->default(0);
             $table->string('made_by');
             $table->text('comments');
             $table->timestamps();
