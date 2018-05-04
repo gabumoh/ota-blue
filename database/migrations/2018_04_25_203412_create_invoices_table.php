@@ -15,13 +15,14 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('ota_id');
+            $table->unsignedInteger('channel_id');
             $table->unsignedInteger('guest_id');
-            $table->dateTime("date");
-            $table->string('invoice_ref',191)->unique();
-            $table->float('commission', 10, 2);
-            $table->float('total', 10, 2);
-            $table->string('status');
+            $table->unsignedInteger('property_id');
+            $table->unsignedInteger('invoice_payment_id');
+            $table->unsignedInteger('commission');
+            $table->unsignedInteger('total');
+            $table->boolean('retrieved')->default(0);
+            $table->enum('status', ['Paid', 'Not paid']);
             $table->timestamps();
         });
     }
