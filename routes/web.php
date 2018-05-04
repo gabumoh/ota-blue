@@ -64,7 +64,32 @@ $router->group(['prefix'=>'ota-blue-api'], function () use ($router){
     $router->delete('invoices/{id}', 
         'InvoiceController@delete'
     );
+
+    //====================Review==================//
+
+    $router->get('reviews',
+        'ReviewController@showAllreviews'
+    );
+
+    $router->get('reviews/{id}', 
+        'ReviewController@showOneInvoice'
+    );
+
+    $router->post('reviews', 
+        'ReviewController@create'
+    );
+
+    $router->put('reviews/{id}', 
+        'ReviewController@update'
+    );
+
+    $router->delete('reviews/{id}', 
+        'ReviewController@delete'
+    );
 });
+
+
+
 
 //Github webhook1
 $router->post('deploy', 'DeployController@deploy');
