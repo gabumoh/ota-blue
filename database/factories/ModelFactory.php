@@ -38,7 +38,7 @@ $factory->define(App\Reservation::class, function (Faker\Generator $faker) {
 return [
     'property_id' => 1,
     'room_category_id' => rand(1,3),
-    'guest_id' => $faker->numberBetween(1, 20),
+    'guest_id' => rand(1,4),
     'stay_id' => $faker->numberBetween(1, 20),
     'channel_id' => rand(1,2),
     'reservation_payment_id' => $faker->numberBetween(1, 20),    
@@ -65,7 +65,7 @@ $factory->define(App\Invoice::class, function (Faker\Generator $faker) {
     $total = [5000, 6000, 10000, 200000, 12000, 15000, 14000, 13000, 50000, 30000, 7000, 8000];
     $t_index = rand(0, 11);
     return [
-        'guest_id' => $faker->numberBetween(1, 20),
+        'guest_id' => rand(1,4),
         'channel_id' => rand(1,2),
         'property_id' => 1,
         'invoice_payment_id' => $faker->numberBetween(1, 20),        

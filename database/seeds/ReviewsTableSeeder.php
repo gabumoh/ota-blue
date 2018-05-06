@@ -28,7 +28,7 @@ class ReviewsTableSeeder extends Seeder
             // ]);
 
             Review::create([
-                'guest_id' => $faker->numberBetween(1, 10),
+                'guest_id' => rand(1,4),
                 'channel_id' => 2,
                 'property_id' => 1,
                 'message_title' => 'Poor service report',
