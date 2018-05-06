@@ -36,11 +36,11 @@ $factory->define(App\Reservation::class, function (Faker\Generator $faker) {
                 'Udoye Marthin', 'Ude Ngozichukwu', 
     ];
 return [
-    'property_id' => $faker->numberBetween(1, 20),
-    'room_category_id' => $faker->numberBetween(1, 20),
+    'property_id' => 1,
+    'room_category_id' => rand(1,3),
     'guest_id' => $faker->numberBetween(1, 20),
     'stay_id' => $faker->numberBetween(1, 20),
-    'channel_id' => $faker->numberBetween(1, 20),
+    'channel_id' => rand(1,2),
     'reservation_payment_id' => $faker->numberBetween(1, 20),    
     'check_in' => $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
     'check_out'=> $faker->dateTimeInInterval($startDate = '+ 5 days', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
@@ -66,8 +66,8 @@ $factory->define(App\Invoice::class, function (Faker\Generator $faker) {
     $t_index = rand(0, 11);
     return [
         'guest_id' => $faker->numberBetween(1, 20),
-        'channel_id' => $faker->numberBetween(1, 20),
-        'property_id' => $faker->numberBetween(1, 20),
+        'channel_id' => rand(1,2),
+        'property_id' => 1,
         'invoice_payment_id' => $faker->numberBetween(1, 20),        
         'commission' => $commission[$com_index],
         'status' => $rand_str[$index],
