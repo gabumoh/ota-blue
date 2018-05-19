@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use App\Reservation;
 
 class ReservationsTableSeeder extends Seeder
 {
@@ -11,8 +12,12 @@ class ReservationsTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        factory(App\Reservation::class, 20)->create();
+    {   
+        $reservation = Reservation::all();
+        $count_reservation = count( $reservation);
+         
+        $seed = 10 - $count_reservation;
+        factory(App\Reservation::class, $seed)->create();
 
     }
 }
