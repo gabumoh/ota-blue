@@ -35,6 +35,7 @@ $factory->define(App\Reservation::class, function (Faker\Generator $faker) {
                 'Ufok Bassey', 'Bassey Edet', 'Haruna Adamu', 'ALH. Danjuma Mato', 'Effiong Marcel',
                 'Udoye Marthin', 'Ude Ngozichukwu', 
     ];
+    $currency = ['USD', 'NGN'];
 return [
     'property_id' => 1,
     'room_category_id' => rand(1,3),
@@ -47,6 +48,7 @@ return [
     'number_of_guests' =>$faker->numberBetween(1, 10),
     'number_of_rooms' => $faker->numberBetween(1, 10),
     'made_by' =>$made_by[rand(0,10)],
+    'currency_code' => $currency[rand(0,1)],
     'paid_status' => $rand_str[$index],
     'booking_status' => 'pending',
     'booking_id' => substr(md5(uniqid(rand(0, 4))), 0,6),

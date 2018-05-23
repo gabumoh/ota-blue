@@ -21,6 +21,7 @@ class CreateReservationsTable extends Migration
             $table->unsignedInteger('reservation_payment_id');
             $table->unsignedInteger('guest_id');
             $table->unsignedInteger('stay_id');
+            $table->string('currency_code')->nullable();
             $table->unsignedInteger('number_of_rooms');
             $table->unsignedInteger('number_of_guests');                      
             $table->dateTime('check_in')->useCurrent();
