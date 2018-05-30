@@ -20,6 +20,7 @@ class CreateReviewsTable extends Migration
             $table->unsignedInteger('guest_id');
             $table->text('message_title');
             $table->text('message');
+            $table->string('reviewer');
             $table->string('review_id', 50)->unique();
             $table->decimal('rating', 3,1);
             $table->enum('status', [1, 2, 3]);
