@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Review;
 use Illuminate\Http\Request;
+use App\ReviewResponse;
 class ReviewController extends Controller
 {
     /**
@@ -73,5 +74,18 @@ class ReviewController extends Controller
         else{
             return response()->json('Review does not exist', 400);
         }
-    }   
+    }  
+    
+    public function response(Request $request)
+    {
+        $response = ReviewResponse::create($request->all());
+ 
+
+        if ($response) {
+            return response()->json(['status' => 'success', 'data'=> $response], 201);
+        }
+        else {
+            return response()->json(['status' => 'error'], 500);
+        }
+    }
 }

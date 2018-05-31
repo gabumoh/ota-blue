@@ -86,6 +86,7 @@ $router->group(['prefix'=>'ota-blue-api'], function () use ($router){
     $router->delete('reviews/{id}', 
         'ReviewController@delete'
     );
+    $router->post('reviews/response', 'ReviewController@response');
 });
 
 
