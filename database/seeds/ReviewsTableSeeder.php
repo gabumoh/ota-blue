@@ -16,7 +16,7 @@ class ReviewsTableSeeder extends Seeder
         $faker = Faker::create();
             Review::create([
                 'guest_id' => $faker->numberBetween(1, 10),
-                'channel_id' => 1,
+                'channel_id' => 2,
                 'property_id' => $faker->numberBetween(1, 10),
                 'message_title' => 'Expression of Gratitude',
                 'message' => 'My experience in your hotels was awesome. Everything worked as I expected. Thanks for a wonderful service',
@@ -44,7 +44,7 @@ class ReviewsTableSeeder extends Seeder
 
             Review::create([
                 'guest_id' => $faker->numberBetween(1, 10),
-                'channel_id' => 1,
+                'channel_id' => 2,
                 'property_id' => $faker->numberBetween(1, 10),
                 'message_title' => 'Appreciatiion',
                 'message' => 'Your hotel is really a place to be. Excellent services, state-of-the-art facilities, I can\'t testify enough, kudos!',
