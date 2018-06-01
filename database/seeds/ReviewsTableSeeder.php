@@ -22,23 +22,23 @@ class ReviewsTableSeeder extends Seeder
                 'message' => 'My experience in your hotels was awesome. Everything worked as I expected. Thanks for a wonderful service',
                 'status' => 3,
                 'reviewer' => 'Mercy Ikpe',
-                'review_id' => substr(md5(uniqid(rand(0,4))), 0,6),
+                'review_id' => substr(md5(uniqid(mt_rand(0,4))), 0,10),
                 'rating' => 4.5,
-                'created_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
+                'created_at'=> $faker->dateTimeInInterval($startDate = 'now',  $timezone = 'Africa/Lagos'),
                 'updated_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
             ]);
 
             Review::create([
-                'guest_id' => rand(1,4),
+                'guest_id' => mt_rand(1,4),
                 'channel_id' => 2,
                 'property_id' => 1,
                 'message_title' => 'Poor service report',
                 'message' => 'I was utterly disappointed with your facilities, do make sure you put things to good shape',
                 'status' => 2,
-                'review_id' => substr(md5(uniqid(rand(0,4))), 0,6),
+                'review_id' => substr(md5(uniqid(mt_rand(0,4))), 0,10),
                 'rating' => 1.5,
                 'reviewer' => 'Juliet Ezekwe',
-                'created_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
+                'created_at'=> $faker->dateTimeInInterval($startDate = 'now', $timezone = 'Africa/Lagos'),
                 'updated_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
             ]);
 
@@ -50,9 +50,9 @@ class ReviewsTableSeeder extends Seeder
                 'message' => 'Your hotel is really a place to be. Excellent services, state-of-the-art facilities, I can\'t testify enough, kudos!',
                 'status' => 1,
                 'reviewer' => 'Mr Chigozie',
-                'review_id' => substr(md5(uniqid(rand(0,4))), 0,6),
+                'review_id' => substr(md5(uniqid(mt_rand(0,4))), 0,10),
                 'rating' => 5,
-                'created_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
+                'created_at'=> $faker->dateTimeInInterval($startDate = 'now', $timezone = 'Africa/Lagos'),
                 'updated_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
             ]);
 
@@ -63,7 +63,7 @@ class ReviewsTableSeeder extends Seeder
             //     'message_title' => 'Excellent place to be',
             //     'message' => 'Wow, your hotels is indeed a london in Africa, modern facilities, smart attendants just to mention but a few',
             //     'status' => 2,
-            //     'review_id' => substr(md5(uniqid(rand(0,4))), 0,6),
+            //     'review_id' => substr(md5(uniqid(mt_rand(0,4))), 0,6),
             //     'rating' => 4.8,
             //     'created_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
             //     'updated_at'=> $faker->dateTimeInInterval($startDate = 'now', $interval = '+ 5 days', $timezone = 'Africa/Lagos'),
